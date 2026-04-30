@@ -26,10 +26,10 @@ body {
   z-index: 1000;
 }
 
-/* LOGO (can be big, but won't affect navbar height) */
+
 .logo {
-  height: 300px;              /* 👈 control size safely */
-  width: auto;               /* keeps aspect ratio */
+  height: 300px;             
+  width: auto;              
   object-fit: contain;
   cursor: pointer;
 }
@@ -41,7 +41,7 @@ body {
   transform: translateX(-50%);
 
   display: flex;
-  flex-direction: row;   /* 👈 forces horizontal layout */
+  flex-direction: row;   
   align-items: center;
   gap: 40px;
 
@@ -52,7 +52,7 @@ body {
 /* LIST ITEMS */
 .navbar ul li {
   list-style: none;
-  display: inline-block; /* extra safety */
+  display: inline-block; 
 }
 
 /* LINKS */
@@ -62,28 +62,57 @@ body {
   font-size: 1.1rem;
   white-space: nowrap;   /* 👈 prevents word breaking */
 }
+/* NAV LINKS (keep your existing layout styles) */
 .navbar ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.2rem;
   position: relative;
-  padding: 5px 0;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  padding: 5px 10px;
+  transition: 0.3s;
 }
 
-/* UNDERLINE HOVER EFFECT */
+/* TOP + BOTTOM LINES */
+.navbar ul li a::before,
 .navbar ul li a::after {
-  content: '';
-  width: 0;
-  height: 3px;
-  background: #075d82;
+  content: "";
   position: absolute;
+  height: 2px;
+  width: 0;
+  background-color: #075d82;
+  transition: 0.4s ease;
+}
+
+/* TOP LINE */
+.navbar ul li a::before {
+  top: -8px;
+  right: 0;
+}
+
+/* BOTTOM LINE */
+.navbar ul li a::after {
+  bottom: -8px;
   left: 0;
-  bottom: -5px;
+}
+
+/* HOVER TEXT COLOR */
+.navbar ul li a:hover {
+  color: #ffffff;
+}
+
+/* EXPAND BOTH LINES */
+.navbar ul li a:hover::before,
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+.navbar ul li a {
   transition: 0.3s ease;
 }
 
-.navbar ul li a:hover::after {
-  width: 100%;
+.navbar ul li a:hover {
+  letter-spacing: 1px;
 }
 
 /* HERO SECTION */
