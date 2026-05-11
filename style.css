@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+body {
+  background: #5CA4EA;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.center {
+  position: relative;
+}
+
+.btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background: #4F95DA;
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  position: relative;
+  z-index: 2;
+}
+
+/* Wave Effect */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+
+  transform: skewX(-25deg);
+}
+
+.btn.wave::before {
+  animation: waveMove 0.8s ease;
+}
+
+@keyframes waveMove {
+  0% {
+    left: -120%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}

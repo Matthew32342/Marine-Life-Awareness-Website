@@ -1,0 +1,27 @@
+ <link rel="stylesheet" href="style.css">
+ 
+<div class="center">
+  <button class="btn" id="waveBtn">
+
+    <svg width="180px" height="60px" viewBox="0 0 180 60">
+      <polyline points="179,1 179,59 1,59 1,1 179,1" />
+    </svg>
+
+    <span>Submit</span>
+
+  </button>
+</div>
+
+<script>
+const btn = document.getElementById("waveBtn");
+
+btn.addEventListener("click", () => {
+
+  btn.classList.remove("wave");
+
+  void btn.offsetWidth;
+
+  btn.classList.add("wave");
+
+});
+</script>
