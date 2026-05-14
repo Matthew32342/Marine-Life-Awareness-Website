@@ -120,7 +120,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('ocean.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('ocean.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -138,77 +138,6 @@ body {
   margin-right: auto;
 }
 
-/* =========================
-   BUBBLE BACKGROUND (FIXED)
-========================= */
-
-.wrapper {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0;
-  pointer-events: none;
-
-  background: linear-gradient(
-    180deg,
-    #00111f 0%,
-    #003049 40%,
-    #000814 100%
-  );
-}
-
-/* each bubble */
-.wrapper div {
-  position: absolute;
-  bottom: -100px;
-
-  width: 40px;
-  height: 40px;
-
-  border-radius: 50%;
-  background: #075d82(219 0% 0% / 0.15);
-
-  animation: floatUp linear infinite;
-}
-
-/* animation */
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) scale(0.5);
-    opacity: 0;
-  }
-
-  30% {
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: translateY(-120vh) scale(1.2);
-    opacity: 0;
-  }
-}
-
-/* bubble positioning + variety */
-.wrapper div:nth-child(1)  { left: 10%; animation-duration: 8s;  }
-.wrapper div:nth-child(2)  { left: 20%; animation-duration: 6s;  }
-.wrapper div:nth-child(3)  { left: 30%; animation-duration: 10s; }
-.wrapper div:nth-child(4)  { left: 40%; animation-duration: 7s;  }
-.wrapper div:nth-child(5)  { left: 50%; animation-duration: 9s;  }
-.wrapper div:nth-child(6)  { left: 60%; animation-duration: 5s;  }
-.wrapper div:nth-child(7)  { left: 70%; animation-duration: 11s; }
-.wrapper div:nth-child(8)  { left: 80%; animation-duration: 6s;  }
-.wrapper div:nth-child(9)  { left: 90%; animation-duration: 8s;  }
-
-/* optional: makes hero sit above bubbles */
-.hero {
-  position: relative;
-  z-index: 2;
-}
-
-.navbar {
-  position: relative;
-  z-index: 2;
-}
 
 /* Page transition code */
 .page-transition {
