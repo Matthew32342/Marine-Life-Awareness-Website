@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marine Life Awareness</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <img src="main Logo .png" class="logo" alt="Logo">
+
+ <ul>
+  <li><a class="transition-link" href="Home.html" class="transition-link">Home</a>
+  <li><a class="transition-link" href="Endangered-Species.html" class="transition-link">Endangered Species</a>
+  <li><a class="transition-link" href="Recent-News.html" class="transition-link">Recent News</a>
+  <li><a class="transition-link" href="Quiz.html" class="transition-link">Quiz</a>
+  <li><a class="transition-link" href="How-Can-You-Help.html" class="transition-link">How Can You Help?</a>
+  <li><a class="transition-link" href="Contact-US.html" class="transition-link">Contact Us</a>
+</ul>
+</div>
+
+
+<!-- Page Transition -->
+<div class="page-transition"></div>
+
+<!-- Page Transition -->
+<script>
+const links = document.querySelectorAll(".transition-link");
+const transition = document.querySelector(".page-transition");
+
+links.forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const target = this.href;
+
+    transition.classList.add("active");
+
+    setTimeout(() => {
+      window.location.href = target;
+    }, 600);
+  });
+});
+
+window.addEventListener("pageshow", () => {
+  transition.classList.remove("active");
+  transition.classList.add("exit");
+
+  setTimeout(() => {
+    transition.classList.remove("exit");
+  }, 700);
+});
+</script>
