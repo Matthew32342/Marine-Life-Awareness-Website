@@ -28,34 +28,7 @@
 <!-- Page Transition -->
 <div class="page-transition"></div>
 
-<!-- Page Transition -->
-<script>
-const links = document.querySelectorAll(".transition-link");
-const transition = document.querySelector(".page-transition");
 
-links.forEach(link => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const target = this.href;
-
-    transition.classList.add("active");
-
-    setTimeout(() => {
-      window.location.href = target;
-    }, 600);
-  });
-});
-
-window.addEventListener("pageshow", () => {
-  transition.classList.remove("active");
-  transition.classList.add("exit");
-
-  setTimeout(() => {
-    transition.classList.remove("exit");
-  }, 700);
-});
-</script>
 
 <!-- HERO SECTION -->
 <section class="hero">
@@ -67,6 +40,24 @@ window.addEventListener("pageshow", () => {
         </p>
     </div>
 </section>
+
+<!-- FADE IN SECTION -->
+<section class="info-section">
+    <div class="info-text fade-left">
+        <h2>Protecting Marine Life</h2>
+
+        <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nobis excepturi delectus fugit magnam labore modi eveniet distinctio corrupti molestias, maiores accusamus laboriosam quod cum aliquam temporibus dolor impedit eius magni totam neque. Sed, dolore similique? Alias, quis. Architecto nulla animi voluptatem quod ad? Dolor ex expedita corporis asperiores voluptas.
+        </p>
+    </div>
+
+    <div class="info-image zoom-in">
+        <img src="main Logo .png" alt="Maui Dolphin">
+    </div>
+
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -171,3 +171,71 @@ body {
   from { transform: translateX(0%); }
   to { transform: translateX(100%); }
 }
+
+
+/* Info (Fade Effect) */
+.info-section {
+  min-height: 80vh;
+  padding: 100px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  background: #050505;
+}
+
+.info-text {
+  flex: 1;
+}
+
+.info-text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #075d82;
+}
+
+.info-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+
+.info-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.info-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #075d82
+}
+
+/* Text Fades */
+.fade-left,
+.zoom-in {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+/* START POSITIONS */
+.fade-left {
+  transform: translateX(-100px);
+}
+
+.zoom-in {
+  transform: scale(0.7);
+}
+
+/* WHEN VISIBLE */
+.fade-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.zoom-in.show {
+  opacity: 1;
+  transform: scale(1);
+}
