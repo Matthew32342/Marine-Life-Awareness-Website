@@ -1,71 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Marine Life Awareness</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-
     <link rel="stylesheet" href="style.css">
+
+    <!-- PRELOAD PAGES -->
+    <link rel="prefetch" href="Home.html">
+    <link rel="prefetch" href="Endangered-Species.html">
+    <link rel="prefetch" href="Recent-News.html">
+    <link rel="prefetch" href="Quiz.html">
+    <link rel="prefetch" href="How-Can-You-Help.html">
+    <link rel="prefetch" href="Contact-US.html">
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <img src="main Logo .png" class="logo" alt="Logo">
+    <!-- NAVBAR -->
+    <div class="navbar">
 
-<ul>
-  <li><a class="transition-link" href="Home.html" class="transition-link">Home</a>
-  <li><a class="transition-link" href="Endangered-Species.html" class="transition-link">Endangered Species</a>
-  <li><a class="transition-link" href="Recent-News.html" class="transition-link">Recent News</a>
-  <li><a class="transition-link" href="Quiz.html" class="transition-link">Quiz</a>
-  <li><a class="transition-link" href="How-Can-You-Help.html" class="transition-link">How Can You Help?</a>
-  <li><a class="transition-link" href="Contact-US.html" class="transition-link">Contact Us</a>
-</ul>
-</div>
+        <img src="main Logo .png" class="logo" alt="Logo">
 
-<!-- Page Transition -->
-<div class="page-transition"></div>
+        <ul>
 
-<!-- Page Transition -->
-<script>
-const links = document.querySelectorAll(".transition-link");
-const transition = document.querySelector(".page-transition");
+            <li>
+                <a class="transition-link" href="Home.html">
+                    Home
+                </a>
+            </li>
 
-links.forEach(link => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
+            <li>
+                <a class="transition-link" href="Endangered-Species.html">
+                    Endangered Species
+                </a>
+            </li>
 
-    const target = this.href;
+            <li>
+                <a class="transition-link" href="Recent-News.html">
+                    Recent News
+                </a>
+            </li>
 
-    transition.classList.add("active");
+            <li>
+                <a class="transition-link" href="Quiz.html">
+                    Quiz
+                </a>
+            </li>
 
-    setTimeout(() => {
-      window.location.href = target;
-    }, 600);
-  });
-});
+            <li>
+                <a class="transition-link" href="How-Can-You-Help.html">
+                    How Can You Help?
+                </a>
+            </li>
 
-window.addEventListener("pageshow", () => {
-  transition.classList.remove("active");
-  transition.classList.add("exit");
+            <li>
+                <a class="transition-link" href="Contact-US.html">
+                    Contact Us
+                </a>
+            </li>
 
-  setTimeout(() => {
-    transition.classList.remove("exit");
-  }, 700);
-});
-</script>
+        </ul>
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>How can you help?</h1>
-        <p>
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate reprehenderit suscipit nihil fugit dolor, quis est mollitia vero consectetur eos?
-        </p>
     </div>
-</section>
+
+    <!-- PAGE TRANSITION -->
+    <div class="page-transition"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>How Can You Help?</h1>
+
+            <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores minus enim ratione accusantium consequatur a laudantium alias nisi, ducimus blanditiis ipsam esse accusamus, soluta tempore corporis corrupti rerum architecto earum?
+            </p>
+
+        </div>
+
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

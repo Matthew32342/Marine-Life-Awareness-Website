@@ -1,70 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Marine Life Awareness</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-
     <link rel="stylesheet" href="style.css">
+
+    <!-- PRELOAD PAGES -->
+    <link rel="prefetch" href="Home.html">
+    <link rel="prefetch" href="Endangered-Species.html">
+    <link rel="prefetch" href="Recent-News.html">
+    <link rel="prefetch" href="Quiz.html">
+    <link rel="prefetch" href="How-Can-You-Help.html">
+    <link rel="prefetch" href="Contact-US.html">
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <img src="main Logo .png" class="logo" alt="Logo">
-<ul>
-  <li><a class="transition-link" href="Home.html" class="transition-link">Home</a>
-  <li><a class="transition-link" href="Endangered-Species.html" class="transition-link">Endangered Species</a>
-  <li><a class="transition-link" href="Recent-News.html" class="transition-link">Recent News</a>
-  <li><a class="transition-link" href="Quiz.html" class="transition-link">Quiz</a>
-  <li><a class="transition-link" href="How-Can-You-Help.html" class="transition-link">How Can You Help?</a>
-  <li><a class="transition-link" href="Contact-US.html" class="transition-link">Contact Us</a>
-</ul>
-</div>
+    <!-- NAVBAR -->
+    <div class="navbar">
 
-<!-- Page Transition -->
-<div class="page-transition"></div>
+        <img src="main Logo .png" class="logo" alt="Logo">
 
-<!-- Page Transition -->
-<script>
-const links = document.querySelectorAll(".transition-link");
-const transition = document.querySelector(".page-transition");
+        <ul>
 
-links.forEach(link => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
+            <li>
+                <a class="transition-link" href="Home.html">
+                    Home
+                </a>
+            </li>
 
-    const target = this.href;
+            <li>
+                <a class="transition-link" href="Endangered-Species.html">
+                    Endangered Species
+                </a>
+            </li>
 
-    transition.classList.add("active");
+            <li>
+                <a class="transition-link" href="Recent-News.html">
+                    Recent News
+                </a>
+            </li>
 
-    setTimeout(() => {
-      window.location.href = target;
-    }, 600);
-  });
-});
+            <li>
+                <a class="transition-link" href="Quiz.html">
+                    Quiz
+                </a>
+            </li>
 
-window.addEventListener("pageshow", () => {
-  transition.classList.remove("active");
-  transition.classList.add("exit");
+            <li>
+                <a class="transition-link" href="How-Can-You-Help.html">
+                    How Can You Help?
+                </a>
+            </li>
 
-  setTimeout(() => {
-    transition.classList.remove("exit");
-  }, 700);
-});
-</script>
+            <li>
+                <a class="transition-link" href="Contact-US.html">
+                    Contact Us
+                </a>
+            </li>
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Quiz</h1>
-        <p>
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate reprehenderit suscipit nihil fugit dolor, quis est mollitia vero consectetur eos?
-        </p>
+        </ul>
+
     </div>
-</section>
+
+    <!-- PAGE TRANSITION -->
+    <div class="page-transition"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Quiz</h1>
+
+            <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam sit nostrum harum doloribus ex, optio necessitatibus commodi accusamus. Vitae asperiores quas delectus fugiat natus ab quisquam omnis voluptatibus adipisci magni.
+            </p>
+
+        </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
