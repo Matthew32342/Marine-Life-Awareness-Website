@@ -308,3 +308,89 @@ body {
   opacity: 1;
   transform: scale(1);
 }
+
+/* QUIZ SECTION */
+.quiz {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px; 
+}
+
+.quiz-container {
+    width: 80%;
+    max-width: 900px;
+    background-image: url(Quiz\ Game\ Page\ Bk.png);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+#question {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.answer-btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.answer-btn:hover {
+    transform: scale(1.02);
+}
+
+.correct {
+    background: #2ecc71 !important;
+    color: rgb(0, 0, 0);
+}
+
+.wrong {
+    background: #e74c3c !important;
+    color: rgb(0, 0, 0);
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* End Screen */
+.result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.95);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
+}
+
+.quiz-container,
+.result-box,
+.quiz-container h1,
+.quiz-container p,
+.quiz-container button,
+.result-box h1,
+.result-box h2,
+.result-box button {
+    color: black !important;
+}

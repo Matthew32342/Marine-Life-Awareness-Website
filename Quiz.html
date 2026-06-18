@@ -74,19 +74,36 @@
     <!-- PAGE TRANSITION -->
     <div class="page-transition"></div>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
+   <!-- QUIZ SECTION -->
+<section class="quiz">
 
-        <div class="hero-content">
+    <div class="quiz-container">
 
-            <h1>Quiz</h1>
+        <h1 id="question">Loading...</h1>
 
-            <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam sit nostrum harum doloribus ex, optio necessitatibus commodi accusamus. Vitae asperiores quas delectus fugiat natus ab quisquam omnis voluptatibus adipisci magni.
-            </p>
+        <div id="answers"></div>
 
-        </div>
+        <p id="message"></p>
 
+    </div>
+
+ <!-- End screen -->
+<div id="resultBox" class="result-box hidden">
+
+    <h1>Quiz Complete!</h1>
+
+    <h2 id="finalScore"></h2>
+
+    <button onclick="restartQuiz()">Play Again</button>
+
+</div>
+
+<button id="startBtn">
+    <img src="Start Button.png">
+</button>
+
+
+</section>
     <!-- JS -->
     <script src="script.js"></script>
 
