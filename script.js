@@ -1,14 +1,10 @@
-// PAGE TRANSITION //
-
+// PAGE TRANSITION
 const links = document.querySelectorAll(".transition-link");
 const transition = document.querySelector(".page-transition");
 
 links.forEach(link => {
-
   link.addEventListener("click", function (e) {
-
     e.preventDefault();
-
     const target = this.href;
 
     transition.classList.add("active");
@@ -16,9 +12,7 @@ links.forEach(link => {
     setTimeout(() => {
       window.location.href = target;
     }, 400);
-
   });
-
 });
 
 window.addEventListener("pageshow", () => {
@@ -26,196 +20,262 @@ window.addEventListener("pageshow", () => {
 });
 
 
-
-// FADE ANIMATION//
-
+// FADE ANIMATION
 const observer = new IntersectionObserver((entries) => {
-
   entries.forEach((entry) => {
-
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
     } else {
       entry.target.classList.remove("show");
     }
-
   });
-
 }, {
   threshold: 0.15
 });
 
 const hiddenElements = document.querySelectorAll(".fade-left, .zoom-in");
-
 hiddenElements.forEach((el) => observer.observe(el));
 
 
-// QUIZ SECTION// 
-const quizData = [
+// QUIZ DATA
+let quizData = [
   {
-    question: "What's the estimated population of the Great Hammerhead Sharks?",
-    answers: ["10,000", "50,000", "1,000", "500"],
-    correct: 0
+    question: "Whats the estimated population of the Great Hammerhead Sharks?",
+    options: ["50,000", "10,000", "500", "1,000"],
+    correct: "10,000",
   },
   {
-    question: "Why are some marine life endangered?",
-    answers: ["Pollution", "Habitat destruction", "Climate Change", "Overfishing"],
-    correct: [0,1,2,3]
+    question: "How many Vaquita Porpoise are left?",
+    options: ["7-13", "2", "55", "1025"],
+    correct: "7-13",
   },
   {
     question: "How many marine life animals die from pollution every year?",
-    answers: [
-      "1M seabirds & 100k marine mammals",
-      "100k seabirds & 1M marine mammals",
-      "1M+ both seabirds and mammals",
-      "500k & 500k"
+    options: [
+      "100,000 seabirds and 1Million+ marine mammals",
+      "1 Million+ marine mammals and 1Million+ seabirds",
+      "500,000 seabirds and 500,000 marine mammals",
+      "1 Million+ seabirds and 100,000 marine mammals",
     ],
-    correct: 0
+    correct: "1 Million+ seabirds and 100,000 marine mammals",
   },
   {
-    question: "What is the endangered marine species only found in NZ?",
-    answers: ["Great White Shark", "Monk Seals", "Humpback Dolphins", "Maui Dolphins"],
-    correct: 3
+    question: "What is the endangered marine life species only found in New Zealand?",
+    options: ["Great White Shark", "Maui Dolphin", "Monkseal", "Humpback Dolphins"],
+    correct: "Maui Dolphin",
   },
   {
     question: "What do sea turtles often mistake plastic bags for?",
-    answers: ["Ghosts", "Bottles", "Jellyfish", "Sharks"],
-    correct: 2
+    options: ["Bottles", "Jellyfish", "Sharks", "Ghosts"],
+    correct: "Jellyfish",
   },
   {
-    question: "Climate Change can damage coral reefs?",
-    answers: ["False", "True"],
-    correct: 1
+    question: "Why are Vaquita Porpoise endangered?",
+    options: ["Gillnets", "Overfishing", "Pollution", "Climate Change"],
+    correct: "Gillnets",
   },
   {
-    question: "Biggest threat to sea turtles?",
-    answers: ["The Sun", "Fishing nets and plastic pollution", "Whales", "Sharks"],
-    correct: 1
+    question: "What is the biggest threat to sea turtles?",
+    options: ["The Sun", "Fishing nets and plastic pollution", "Whales", "Sharks"],
+    correct: "Fishing nets and plastic pollution",
   },
   {
     question: "What does it mean if a marine animal is endangered?",
-    answers: [
-      "High risk of extinction",
-      "Completely fine",
-      "Already extinct",
-      "Very low risk"
+    options: [
+      "Great Pyramid of Giza",
+      "Their species are extinct",
+      "Their species are at a very low risk of extinction",
+      "Their species are at very high risk of extinction",
     ],
-    correct: 0
+    correct: "Their species are at very high risk of extinction",
   },
   {
-    question: "Which helps marine life?",
-    answers: ["Pollution", "Overfishing", "Recycling", "Oil spills"],
-    correct: 2
+    question: "Which of these can help keep marine life safe?",
+    options: ["Pollution", "Recycling", "Oil spills", "Overfishing"],
+    correct: "Recycling",
   },
   {
-    question: "Main greenhouse gas warming oceans?",
-    answers: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Helium"],
-    correct: 1
-  }
+    question: "What greenhouse gas is most responsible for warming oceans?",
+    options: ["Oxygen", "Nitrogen", "Helium", "Carbon Dioxide"],
+    correct: "Carbon Dioxide",
+  },
 ];
 
-let currentQuestion = 0;
+
+// ELEMENTS
+const quizContainer = document.querySelector(".quiz-container");
+const questionEl = document.querySelector(".quiz-container .question");
+const optionsEl = document.querySelector(".quiz-container .options");
+const nextBtn = document.querySelector(".quiz-container .next-btn");
+const quizResult = document.querySelector(".quiz-result");
+const startBtnContainer = document.querySelector(".start-btn-container");
+const startBtn = document.querySelector(".start-btn");
+
+// STATE
+let questionNumber = 0;
 let score = 0;
-
-const questionEl = document.getElementById("question");
-const answersEl = document.getElementById("answers");
-const messageEl = document.getElementById("message");
-
-const resultBox = document.getElementById("resultBox");
-const finalScore = document.getElementById("finalScore");
+const MAX_QUESTIONS = 10;
+let timerInterval;
 
 
-// LOAD QUESTION// 
+// SHUFFLE
+const shuffleArray = (array) => {
+  return array.slice().sort(() => Math.random() - 0.5);
+};
 
-function loadQuestion() {
+quizData = shuffleArray(quizData);
 
-  if (currentQuestion >= quizData.length) {
 
-    document.querySelector(".quiz-container").style.display = "none";
-    resultBox.classList.remove("hidden");
+// RESET STORAGE
+const resetLocalStorage = () => {
+  for (let i = 0; i < MAX_QUESTIONS; i++) {
+    localStorage.removeItem(`userAnswer_${i}`);
+  }
+};
 
-    finalScore.textContent = `You scored ${score} / ${quizData.length}`;
+resetLocalStorage();
 
+
+// CHECK ANSWER
+const checkAnswer = (e) => {
+  let userAnswer = e.target.textContent;
+
+  if (userAnswer === quizData[questionNumber].correct) {
+    score++;
+    e.target.classList.add("correct");
+  } else {
+    e.target.classList.add("incorrect");
+  }
+
+  localStorage.setItem(`userAnswer_${questionNumber}`, userAnswer);
+
+  document.querySelectorAll(".option").forEach((o) => {
+    o.classList.add("disabled");
+  });
+};
+
+
+// CREATE QUESTION
+const createQuestion = () => {
+  clearInterval(timerInterval);
+
+  let secondsLeft = 9;
+  const timerDisplay = document.querySelector(".timer");
+
+  timerDisplay.classList.remove("danger");
+  timerDisplay.textContent = `Time Left: 10 seconds`;
+
+  timerInterval = setInterval(() => {
+    timerDisplay.textContent = `Time Left: ${secondsLeft
+      .toString()
+      .padStart(2, "0")} seconds`;
+
+    secondsLeft--;
+
+    if (secondsLeft < 3) {
+      timerDisplay.classList.add("danger");
+    }
+
+    if (secondsLeft < 0) {
+      clearInterval(timerInterval);
+      displayNextQuestion();
+    }
+  }, 1000);
+
+  optionsEl.innerHTML = "";
+
+  questionEl.innerHTML = `<span class="question-number">${questionNumber + 1}/${MAX_QUESTIONS}</span>
+  ${quizData[questionNumber].question}`;
+
+  const shuffledOptions = shuffleArray(quizData[questionNumber].options);
+
+  shuffledOptions.forEach((o) => {
+    const btn = document.createElement("button");
+    btn.classList.add("option");
+    btn.textContent = o;
+
+    btn.addEventListener("click", checkAnswer);
+
+    optionsEl.appendChild(btn);
+  });
+};
+
+
+// NEXT QUESTION (ONLY ONE VERSION)
+const displayNextQuestion = () => {
+  if (questionNumber >= MAX_QUESTIONS - 1) {
+    displayQuizResult();
     return;
   }
 
-  const q = quizData[currentQuestion];
+  questionNumber++;
+  createQuestion();
+};
 
-  questionEl.textContent = q.question;
-  answersEl.innerHTML = "";
-  messageEl.textContent = "";
-
-  q.answers.forEach((answer, index) => {
-
-    const btn = document.createElement("button");
-    btn.classList.add("answer-btn");
-    btn.textContent = answer;
-
-    btn.onclick = () => checkAnswer(btn, index, q.correct);
-
-    answersEl.appendChild(btn);
-
-  });
-
+if (nextBtn) {
+  nextBtn.addEventListener("click", displayNextQuestion);
 }
 
 
-// CHECK ANSWER// 
-
-function checkAnswer(btn, index, correct) {
-
-  let isCorrect = false;
-
-  if (Array.isArray(correct)) {
-    isCorrect = correct.includes(index);
-  } else {
-    isCorrect = index === correct;
-  }
-
-  if (isCorrect) {
-    btn.classList.add("correct");
-    messageEl.textContent = "Correct!";
-    score++;
-  } else {
-    btn.classList.add("wrong");
-    messageEl.textContent = "Wrong answer!";
-  }
-
-  setTimeout(() => {
-    currentQuestion++;
-  }, 1000);
-
-}
-
-
-// RESTART QUIZ// 
-
-function restartQuiz() {
-
-  currentQuestion = 0;
+// RETAKE
+const retakeQuiz = () => {
+  questionNumber = 0;
   score = 0;
 
-  resultBox.classList.add("hidden");
-  document.querySelector(".quiz-container").style.display = "block";
+  quizData = shuffleArray(quizData);
+  resetLocalStorage();
 
-}
+  quizResult.style.display = "none";
+  quizContainer.style.display = "block";
+
+  createQuestion();
+};
 
 
-// START QUIZ// 
+// RESULT SCREEN
+const displayQuizResult = () => {
+  quizResult.style.display = "flex";
+  quizContainer.style.display = "none";
+  quizResult.innerHTML = "";
 
-document.addEventListener("DOMContentLoaded", () => {
+  const heading = document.createElement("h2");
+  heading.textContent = `You scored ${score} / ${MAX_QUESTIONS}`;
+  quizResult.appendChild(heading);
 
-  const startBtn = document.getElementById("startBtn");
+  for (let i = 0; i < MAX_QUESTIONS; i++) {
+    const div = document.createElement("div");
+    div.classList.add("question-container");
 
-  // Only attach if button exists (prevents errors on other pages)
-  if (startBtn) {
-    startBtn.addEventListener("click", () => {
-      loadQuestion();
-    });
+    const userAnswer = localStorage.getItem(`userAnswer_${i}`);
+    const correctAnswer = quizData[i].correct;
+
+    if (userAnswer !== correctAnswer) {
+      div.classList.add("incorrect");
+    }
+
+    div.innerHTML = `
+      <div>Question ${i + 1}: ${quizData[i].question}</div>
+      <div>Your answer: ${userAnswer || "Not answered"}</div>
+      <div>Correct answer: ${correctAnswer}</div>
+    `;
+
+    quizResult.appendChild(div);
   }
 
-});
+  const btn = document.createElement("button");
+  btn.textContent = "Retake Quiz";
+  btn.classList.add("retake-btn");
+  btn.addEventListener("click", retakeQuiz);
 
-const startScreen = document.getElementById("startScreen");
-const startBtn = document.getElementById("startBtn");
-const quizContainer = document.querySelector(".quiz-container");
+  quizResult.appendChild(btn);
+};
+
+
+// START BUTTON (SAFE)
+if (startBtn) {
+  startBtn.addEventListener("click", () => {
+    startBtnContainer.style.display = "none";
+    quizContainer.style.display = "block";
+    createQuestion();
+  });
+}
