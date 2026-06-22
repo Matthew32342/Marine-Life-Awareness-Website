@@ -311,7 +311,7 @@ body {
 
 /* QUIZ SECTION */
 .quiz-container {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Bobby Jones', display;
   max-width: 900px;
   margin: 0 auto;
   padding: 16px;
@@ -329,7 +329,8 @@ body {
 
 .quiz-container h2.question {
   font-size: 20px;
-  background: #d0ecff;
+  font-family: 'Josefin Sans', sans-serif;
+  background: #000000;
   padding: 16px;
   border-radius: 8px;
   font-weight: normal;
@@ -347,7 +348,7 @@ body {
   border: none;
   padding: 24px 32px;
   font-size: 18px;
-  background: #1d3557;
+  background: #075d82;
   color: #fff;
 }
 
@@ -388,7 +389,7 @@ body {
   gap: 24px;
   max-width: 900px;
   margin: 0 auto;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Bobby Jones', display;
   padding: 16px;
 }
 
@@ -405,10 +406,15 @@ body {
   color: #fff;
 }
 
+.quiz-result .question-container.option.correct {
+  background: #51e351;
+  color: #fff;
+}
+
 .question-number {
   font-size: 16px;
   margin-right: 16px;
-  background: #1d3557;
+  background: #075d82;
   color: #fff;
   padding: 8px;
   border-radius: 8px;
@@ -420,39 +426,59 @@ body {
   }
 }
 
+/* START SCREEN */
 .start-btn-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Roboto", sans-serif;
+  width: 1000px;
+  max-width: 90%;
+  height: 550px;
+
+  margin: 80px auto;
+
   display: flex;
   flex-direction: column;
+  justify-content: flex-end; /* puts content near bottom */
   align-items: center;
+
+  padding-bottom: 60px;
+
+  background-image: url("Home\ page\ bk.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 25px;
+
+  box-shadow: 0 0 30px rgba(7,93,130,0.6);
 }
 
-.start-btn-container h2 {
-  font-size: 40px;
-  margin: 0;
-}
-
+/* START BUTTON */
 .start-btn-container .start-btn {
-  background: #e63946;
-  color: #fff;
-  padding: 8px 32px;
-  border-radius: 8px;
+
+  width: 200px;
+  height: 120px;
+
+  background: transparent;
+  background-image: url("Start\ Button\ .png");
+  background-size: 150%, 150%;
+  background-repeat: no-repeat;
+  background-position: center;
+
   border: none;
-  font-size: 24px;
+  outline: none;
+
   cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
+
+  color: transparent;
+  font-size: 0;
+
+  transition: transform 0.25s ease;
 }
 
-.quiz-container {
-  display: none;
+.start-btn-container .start-btn:hover {
+  transform: scale(1.1);
 }
 
-.start-btn-container {
-  display: flex;
-  z-index: 100;
+.start-btn-container .start-btn:active {
+  transform: scale(0.95);
 }
