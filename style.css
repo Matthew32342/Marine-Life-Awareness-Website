@@ -222,15 +222,11 @@ body {
 .info-section {
 
   min-height: 80vh;
-
   padding: 100px 10%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 60px;
-
   background: #050505;
 }
 
@@ -264,7 +260,6 @@ body {
 }
 
 .info-image img {
-
   width: 100%;
   max-width: 500px;
 
@@ -289,7 +284,6 @@ body {
   will-change: transform, opacity;
 }
 
-/* START POSITIONS */
 .fade-left {
   transform: translateX(-100px);
 }
@@ -313,14 +307,28 @@ body {
 .quiz-container {
   font-family: 'Bobby Jones', display;
   max-width: 900px;
-  margin: 0 auto;
+  width: 90%;
+  margin: 60px auto;
   padding: 16px;
   display: none;
+
+  /* QUIZ BACKGROUND */
+  background-image: url("Quiz\ Game\ Page\ Bk.png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 25px;
+
+  box-shadow: 0 0 30px rgba(7,93,130,0.6);
+
+  text-align: center;
 }
 
 .quiz-container .timer {
   font-weight: bold;
   text-align: right;
+  color: #075d82;
 }
 
 .timer.danger {
@@ -329,12 +337,14 @@ body {
 
 .quiz-container h2.question {
   font-size: 20px;
-  font-family: 'Josefin Sans', sans-serif;
-  background: #000000;
+  font-family: 'Bobby Jones', display;
+  background: rgba(0,0,0,0.85);
+  color: white;
   padding: 16px;
   border-radius: 8px;
   font-weight: normal;
   line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .quiz-container .options {
@@ -348,8 +358,11 @@ body {
   border: none;
   padding: 24px 32px;
   font-size: 18px;
+
   background: #075d82;
   color: #fff;
+
+  border-radius: 10px;
 }
 
 .quiz-container button {
@@ -371,7 +384,7 @@ body {
 
 .quiz-container .next-btn,
 .quiz-result .retake-btn {
-  background: #222;
+  background: #075d82;
   color: #fff;
   border: none;
   padding: 12px 32px;
@@ -381,8 +394,10 @@ body {
   letter-spacing: 3px;
   cursor: pointer;
   width: fit-content;
+  border-radius: 10px;
 }
 
+/* RESULT PAGE */
 .quiz-result {
   display: none;
   flex-direction: column;
@@ -397,6 +412,7 @@ body {
   padding: 12px;
   border: 1px solid #eee;
   display: flex;
+    background: #51e351;
   flex-direction: column;
   gap: 10px;
 }
@@ -406,16 +422,14 @@ body {
   color: #fff;
 }
 
-.quiz-result .question-container.option.correct {
-  background: #51e351;
-  color: #fff;
-}
-
 .question-number {
   font-size: 16px;
+
   margin-right: 16px;
+
   background: #075d82;
   color: #fff;
+
   padding: 8px;
   border-radius: 8px;
 }
@@ -426,52 +440,37 @@ body {
   }
 }
 
-/* START SCREEN */
+
+/*START SCREEN */
 .start-btn-container {
   width: 1000px;
   max-width: 90%;
   height: 550px;
-
   margin: 80px auto;
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* puts content near bottom */
+  justify-content: flex-end;
   align-items: center;
-
   padding-bottom: 60px;
-
   background-image: url("Home\ page\ bk.png");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   border-radius: 25px;
-
   box-shadow: 0 0 30px rgba(7,93,130,0.6);
 }
 
-/* START BUTTON */
 .start-btn-container .start-btn {
-
-  width: 200px;
-  height: 120px;
-
-  background: transparent;
-  background-image: url("Start\ Button\ .png");
-  background-size: 150%, 150%;
+  width: 320px;
+  height: 200px;
+  background: url("Start\ Button\ .png"); 
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
   border: none;
   outline: none;
-
   cursor: pointer;
-
-  color: transparent;
   font-size: 0;
-
   transition: transform 0.25s ease;
 }
 
