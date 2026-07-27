@@ -312,7 +312,7 @@ body {
   display: none;
 
   /* QUIZ BACKGROUND */
-  background-image: url("Quiz\ Game\ Page\ Bk.png"); 
+  background-image: url("qp1.png"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -450,7 +450,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   padding-bottom: 60px;
-  background-image: url("Home\ page\ bk.png");
+  background-image: url("qhp1.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -460,9 +460,9 @@ body {
 
 /*START QUIZ BUTTON */
 .start-btn-container .start-btn {
-  width: 320px;
-  height: 200px;
-  background: url("Start\ Button\ .png"); 
+  width: 300px;
+  height: 150px;
+  background: url("qsb1.png"); 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
