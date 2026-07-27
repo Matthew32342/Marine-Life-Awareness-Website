@@ -31,7 +31,7 @@ body {
   transform: translateZ(0);
 }
 
-/* LOGO */
+/* THIS IS THE CODE FOR MY LOGO */
 .logo {
   height: 300px;
   width: auto;
@@ -60,13 +60,11 @@ body {
   padding: 0;
 }
 
-/* LIST ITEMS */
 .navbar ul li {
   list-style: none;
   display: inline-block;
 }
 
-/* LINKS */
 .navbar ul li a {
   position: relative;
 
@@ -88,7 +86,7 @@ body {
   transform: translateZ(0);
 }
 
-/* TOP + BOTTOM LINES */
+/* HERE IS THE CODE FOR MY TOP + BOTTOM LINE EFFECTS */
 .navbar ul li a::before,
 .navbar ul li a::after {
 
@@ -104,31 +102,31 @@ body {
   transition: width 0.4s ease;
 }
 
-/* TOP LINE */
+/* TOP LINE EFFECT CODE */
 .navbar ul li a::before {
   top: -8px;
   right: 0;
 }
 
-/* BOTTOM LINE */
+/* BOTTOM LINE EFFECTS CODE*/
 .navbar ul li a::after {
   bottom: -8px;
   left: 0;
 }
 
-/* HOVER */
+/* HOVER EFFECTS FOR MY NAV BAR*/
 .navbar ul li a:hover {
   color: #fff;
   letter-spacing: 1px;
 }
 
-/* LINE EXPAND */
+/* LINE EXPAND EFFECT */
 .navbar ul li a:hover::before,
 .navbar ul li a:hover::after {
   width: 100%;
 }
 
-/* HERO SECTION */
+/* HERO SECTION(TEXT ON PAGES) */
 .hero {
   min-height: 90vh;
 
@@ -150,12 +148,13 @@ body {
   transform: translateZ(0);
 }
 
-/* HERO TEXT */
+/* HERO TEXT(TEXT ON PAGES)*/
 .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 20px;
 }
 
+/* HERO TEXT(TEXT ON PAGES)*/
 .hero-content p {
   font-size: 1.2rem;
 
@@ -165,7 +164,7 @@ body {
   margin-right: auto;
 }
 
-/* PAGE TRANSITION */
+/* PAGE TRANSITION EFFECT */
 .page-transition {
 
   position: fixed;
@@ -193,7 +192,7 @@ body {
 
 }
 
-/* SLIDE ACROSS */
+/* SLIDE ACROSS TRANSITION EFFECT*/
 .page-transition.active {
   animation: slideAcross 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
@@ -218,7 +217,7 @@ body {
   }
 
 }
-/* INFO SECTION */
+/* INFO SECTION(TEXT ON PAGES) */
 .info-section {
 
   min-height: 80vh;
@@ -230,7 +229,6 @@ body {
   background: #050505;
 }
 
-/* TEXT */
 .info-text {
   flex: 1;
 }
@@ -259,6 +257,7 @@ body {
   justify-content: center;
 }
 
+/* IMAGE */
 .info-image img {
   width: 100%;
   max-width: 500px;
@@ -271,7 +270,7 @@ body {
   transform: translateZ(0);
 }
 
-/* ANIMATIONS */
+/* ANIMATIONS FOR FADE IN EFFECTS*/
 .fade-left,
 .zoom-in {
 
@@ -292,7 +291,7 @@ body {
   transform: scale(0.7);
 }
 
-/* SHOW */
+/* ANIMATIONS FOR FADE IN EFFECTS*/
 .fade-left.show {
   opacity: 1;
   transform: translateX(0);
@@ -397,7 +396,7 @@ body {
   border-radius: 10px;
 }
 
-/* RESULT PAGE */
+/* RESULT QUIZ PAGE */
 .quiz-result {
   display: none;
   flex-direction: column;
@@ -440,8 +439,7 @@ body {
   }
 }
 
-
-/*START SCREEN */
+/*START QUIZ SCREEN */
 .start-btn-container {
   width: 1000px;
   max-width: 90%;
@@ -460,6 +458,7 @@ body {
   box-shadow: 0 0 30px rgba(7,93,130,0.6);
 }
 
+/*START QUIZ BUTTON */
 .start-btn-container .start-btn {
   width: 320px;
   height: 200px;

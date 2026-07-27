@@ -1,4 +1,4 @@
-// PAGE TRANSITION
+// PAGE TRANSITION // 
 const links = document.querySelectorAll(".transition-link");
 const transition = document.querySelector(".page-transition");
 
@@ -20,7 +20,7 @@ window.addEventListener("pageshow", () => {
 });
 
 
-// FADE ANIMATION
+// FADE ANIMATION //
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -37,7 +37,7 @@ const hiddenElements = document.querySelectorAll(".fade-left, .zoom-in");
 hiddenElements.forEach((el) => observer.observe(el));
 
 
-// QUIZ DATA
+// QUIZ QUESTIONS //
 let quizData = [
   {
     question: "Whats the estimated population of the Great Hammerhead Sharks?",
@@ -102,7 +102,7 @@ let quizData = [
 ];
 
 
-// ELEMENTS
+// QUIZ ELEMENTS //
 const quizContainer = document.querySelector(".quiz-container");
 const questionEl = document.querySelector(".quiz-container .question");
 const optionsEl = document.querySelector(".quiz-container .options");
@@ -111,14 +111,13 @@ const quizResult = document.querySelector(".quiz-result");
 const startBtnContainer = document.querySelector(".start-btn-container");
 const startBtn = document.querySelector(".start-btn");
 
-// STATE
 let questionNumber = 0;
 let score = 0;
 const MAX_QUESTIONS = 10;
 let timerInterval;
 
 
-// SHUFFLE
+// QUIZ SHUFFLE //
 const shuffleArray = (array) => {
   return array.slice().sort(() => Math.random() - 0.5);
 };
@@ -126,7 +125,6 @@ const shuffleArray = (array) => {
 quizData = shuffleArray(quizData);
 
 
-// RESET STORAGE
 const resetLocalStorage = () => {
   for (let i = 0; i < MAX_QUESTIONS; i++) {
     localStorage.removeItem(`userAnswer_${i}`);
@@ -136,7 +134,7 @@ const resetLocalStorage = () => {
 resetLocalStorage();
 
 
-// CHECK ANSWER
+// QUIZ CHECK ANSWER //
 const checkAnswer = (e) => {
   let userAnswer = e.target.textContent;
 
@@ -155,7 +153,6 @@ const checkAnswer = (e) => {
 };
 
 
-// CREATE QUESTION
 const createQuestion = () => {
   clearInterval(timerInterval);
 
@@ -201,7 +198,7 @@ const createQuestion = () => {
 };
 
 
-// NEXT QUESTION (ONLY ONE VERSION)
+// QUIZ NEXT QUESTION //
 const displayNextQuestion = () => {
   if (questionNumber >= MAX_QUESTIONS - 1) {
     displayQuizResult();
@@ -217,7 +214,6 @@ if (nextBtn) {
 }
 
 
-// RETAKE
 const retakeQuiz = () => {
   questionNumber = 0;
   score = 0;
@@ -232,7 +228,7 @@ const retakeQuiz = () => {
 };
 
 
-// RESULT SCREEN
+// QUIZ RESULT SCREEN //
 const displayQuizResult = () => {
   quizResult.style.display = "flex";
   quizContainer.style.display = "none";
@@ -271,7 +267,7 @@ const displayQuizResult = () => {
 };
 
 
-// START BUTTON (SAFE)
+// QUIZ START BUTTON // 
 if (startBtn) {
   startBtn.addEventListener("click", () => {
     startBtnContainer.style.display = "none";
