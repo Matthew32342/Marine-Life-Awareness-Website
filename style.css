@@ -217,6 +217,7 @@ body {
   }
 
 }
+
 /* INFO SECTION(TEXT ON PAGES) */
 .info-section {
 
@@ -304,7 +305,6 @@ body {
 
 /* QUIZ SECTION */
 .quiz-container {
-  font-family: 'Bobby Jones', display;
   max-width: 900px;
   width: 90%;
   margin: 60px auto;
@@ -326,8 +326,9 @@ body {
 
 .quiz-container .timer {
   font-weight: bold;
+  font-size: 50px;
   text-align: right;
-  color: #51e351;
+  color: #075d82 ;
 }
 
 .timer.danger {
@@ -336,7 +337,6 @@ body {
 
 .quiz-container h2.question {
   font-size: 20px;
-  font-family: 'Bobby Jones', display;
   background: rgba(0,0,0,0.85);
   color: #E0FFFF;
   padding: 16px;
@@ -404,7 +404,6 @@ body {
   width: 90%;
   margin: 60px auto;
   padding: 20px;
-  font-family: 'Bobby Jones', display;
   color: #E0FFFF;
   background: #075d82;
   border-radius: 25px;
@@ -415,7 +414,7 @@ body {
   padding: 12px;
   border: 1px solid #E0FFFF;
   display: flex;
-    background: #51e351;
+    background: #13b813;
   flex-direction: column;
   gap: 10px;
 }

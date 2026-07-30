@@ -152,7 +152,7 @@ const checkAnswer = (e) => {
   });
 };
 
-
+//Timer// 
 const createQuestion = () => {
   clearInterval(timerInterval);
 
@@ -160,12 +160,12 @@ const createQuestion = () => {
   const timerDisplay = document.querySelector(".timer");
 
   timerDisplay.classList.remove("danger");
-  timerDisplay.textContent = `Time Left: 10 seconds`;
+  timerDisplay.textContent = "10";
 
   timerInterval = setInterval(() => {
-    timerDisplay.textContent = `Time Left: ${secondsLeft
+    timerDisplay.textContent = secondsLeft
       .toString()
-      .padStart(2, "0")} seconds`;
+      .padStart(2, "0");
 
     secondsLeft--;
 
