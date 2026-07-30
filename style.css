@@ -327,18 +327,18 @@ body {
 .quiz-container .timer {
   font-weight: bold;
   text-align: right;
-  color: #075d82;
+  color: #51e351;
 }
 
 .timer.danger {
-  color: red;
+  color: #e63946;
 }
 
 .quiz-container h2.question {
   font-size: 20px;
   font-family: 'Bobby Jones', display;
   background: rgba(0,0,0,0.85);
-  color: white;
+  color: #E0FFFF;
   padding: 16px;
   border-radius: 8px;
   font-weight: normal;
@@ -357,9 +357,8 @@ body {
   border: none;
   padding: 24px 32px;
   font-size: 18px;
-
   background: #075d82;
-  color: #fff;
+  color: #E0FFFF;
 
   border-radius: 10px;
 }
@@ -384,7 +383,7 @@ body {
 .quiz-container .next-btn,
 .quiz-result .retake-btn {
   background: #075d82;
-  color: #fff;
+  color: #E0FFFF;
   border: none;
   padding: 12px 32px;
   font-size: 20px;
@@ -402,14 +401,19 @@ body {
   flex-direction: column;
   gap: 24px;
   max-width: 900px;
-  margin: 0 auto;
+  width: 90%;
+  margin: 60px auto;
+  padding: 20px;
   font-family: 'Bobby Jones', display;
-  padding: 16px;
+  color: #E0FFFF;
+  background: #075d82;
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(7,93,130,0.6);
 }
 
 .quiz-result .question-container {
   padding: 12px;
-  border: 1px solid #eee;
+  border: 1px solid #E0FFFF;
   display: flex;
     background: #51e351;
   flex-direction: column;
@@ -418,7 +422,7 @@ body {
 
 .quiz-result .question-container.incorrect {
   background: #e63946;
-  color: #fff;
+  color: #E0FFFF;
 }
 
 .question-number {
@@ -427,7 +431,7 @@ body {
   margin-right: 16px;
 
   background: #075d82;
-  color: #fff;
+  color: #E0FFFF;
 
   padding: 8px;
   border-radius: 8px;
