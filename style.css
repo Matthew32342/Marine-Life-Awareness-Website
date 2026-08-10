@@ -413,14 +413,22 @@ body {
 }
 
 /* HERO BUTTONS(take action and lean more buttons) */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .hero-buttons{
-
     display:flex;
     justify-content:center;
     gap:35px;
+    margin-top:10px;
+}
 
-    margin-top:40px;
+.hero-content h1 {
+    font-size: 5rem;
 }
 
 /* BUTTON */
@@ -434,7 +442,6 @@ body {
     text-decoration:none;
 
     font-size:1rem;
-    font-weight:600;
 
     color:white;
 
@@ -475,9 +482,12 @@ body {
     transform:scale(.97);
 }
 
+
+
+
+
 /* INFO SECTION(TEXT ON PAGES) */
 .info-section {
-
   min-height: 80vh;
   padding: 100px 10%;
   display: flex;
