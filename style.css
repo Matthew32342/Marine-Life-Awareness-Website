@@ -1,25 +1,22 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #000;
   color: #fff;
-  overflow-x: hidden;
 }
 
-/* NAVBAR */
+
+/* Navigation Bar */
 .navbar {
   width: 100%;
-  height: 170px;
-
-  padding: 0 40px;
-
+  height: 170px;            
+  padding: 0 40px;          
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,11 +50,13 @@ body {
   left: 50%;
   transform: translateX(-50%);
 
+
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  
   align-items: center;
 
   gap: 40px;
+
 
   margin: 0;
   padding: 0;
@@ -68,6 +67,16 @@ body {
   display: inline-block;
 }
 
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  white-space: nowrap;  
+}
+
+
+/* TOP + BOTTOM LINES EFFECT*/
 .navbar ul li a {
   position: relative;
 
@@ -107,30 +116,13 @@ body {
 
 /* TOP LINE EFFECT CODE */
 .navbar ul li a::before {
-  top: 0;
-  left: 0;
+  top: -8px;
+  right: 0;
 }
 
 /* BOTTOM LINE EFFECTS CODE*/
 .navbar ul li a::after {
-  bottom: 0;
-  right: 0;
-}
-
-/* LEFT + RIGHT LINES */
-.navbar ul li a span::before,
-.navbar ul li a span::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 0%;
-  background-color: #075d82;
-  transition: height 0.4s ease;
-}
-
-/* LEFT LINE */
-.navbar ul li a span::before {
-  top: 0;
+  bottom: -8px;
   left: 0;
 }
 
@@ -161,6 +153,8 @@ body {
     rgba(0,0,0,0.6)),
     url('ocean.jpg');
 
+  background: linear-gradient(rgba(0, 238, 255, 0.6), rgba(0, 0, 0, 0.6)),
+              url('ocean.jpg');
   background-size: cover;
   background-position: center;
 
@@ -224,40 +218,46 @@ body {
 
   background: linear-gradient(
     180deg,
-    #075d82 0%,
-    #075d82 40%,
-    #075d82 100%
+    #00111f 0%,
+    #003049 40%,
+    #000814 100%
   );
+
 
   z-index: -1;
 }
 
+
 .wrapper div {
   position: absolute;
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
 
-
-  border: 5px solid rgba(255, 255, 255, 0.541);
+  border: 3px solid rgba(255,255,255,0.5);
   border-radius: 50%;
 
+  background: rgba(255,255,255,0.05);
 
-  animation: animate 10s linear infinite;
+  box-shadow:
+    0 0 15px rgba(0,255,255,0.4),
+    inset 0 0 15px rgba(255,255,255,0.2);
+
+  animation: animate 12s linear infinite;
 }
 
 
 .wrapper div .dot {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 18px;
+  right: 18px;
 
-
-  width: 10px;
-  height: 10px;
-
+  width: 12px;
+  height: 12px;
 
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255,255,255,0.8);
+
+  box-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
 
 
