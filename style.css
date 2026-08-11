@@ -489,7 +489,7 @@ body {
 
     animation: fadeInButtons 1s ease forwards;
 
-    animation-delay: 0.5sssss;
+    animation-delay: 0.8sssss;
 }
 
 @keyframes fadeInButtons {
@@ -743,21 +743,9 @@ body {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* IMAGE */
 .info-image {
   flex: 1;
-
   display: flex;
   justify-content: center;
 }
@@ -768,9 +756,7 @@ body {
   max-width: 500px;
   background-color: #000;
   border-radius: 20px;
-
   box-shadow: 0 0 30px #075d82;
-
   will-change: transform;
   transform: translateZ(0);
 }
