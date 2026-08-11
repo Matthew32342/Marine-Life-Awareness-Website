@@ -134,7 +134,7 @@ body {
 
 /* LINE EXPAND EFFECT */
 .navbar ul li a:hover::before,
-.navbar ul li a:hover::after {
+.navbar ul li a:hover::after { 
   width: 100%;
 }
 
