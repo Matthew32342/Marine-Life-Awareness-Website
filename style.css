@@ -1499,9 +1499,61 @@ body {
     transform: scale(1.05);
 }
 
+/* =========================================================
+   QUIZ INSTRUCTIONS BOX
+   ========================================================= */
+
+.quiz-instructions4 {
+    width: 92%;
+    max-width: 1050px;
+    margin: 30px auto 30px auto;
+    padding: 13px 12px 18px;
+    background-color: #ffffff;
+    box-shadow: 0 0 30px #075d82;
+    box-sizing: border-box;
+    color: #222;
+}
 
 
+/* Heading */
+.quiz-instructions4 h2 {
+    margin: 0 0 8px 0;
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+}
 
+
+/* subtitle text */
+.quiz-instructions4 p {
+    margin: 0;
+    color: black;
+    font-size: 15px;
+    line-height: 1.35;
+}
+
+/* fade in effect */
+.quiz-instructions4 h2,
+.quiz-instructions4 p {
+    opacity: 0;
+    animation: fadeInText4 1.2s ease forwards;
+}
+
+.quiz-instructions4 p {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInText4 {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 
