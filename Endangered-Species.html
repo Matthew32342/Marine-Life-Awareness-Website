@@ -176,15 +176,14 @@
                 <h3>Pollution</h3>
                 <p>
                     Marine pollution occurs when harmful substances such as plastic, chemicals, oil and rubbish enter the ocean. Pollution can injure or kill marine animals when they eat rubbish or become trapped in it. Chemicals and other pollutants can also contaminate the water and damage habitats such as coral reefs and seagrass beds. Plastic pollution is especially harmful because it can remain in the environment for many years. Reducing waste, improving waste management and preventing pollution from reaching the ocean can help protect marine life and keep the ocean healthy.
-
+ 
                 </p>
             </div>
 
             <div class="endangered-item">
                 <h3>Climate Change</h3>
                 <p>
-                    Climate change is changing ocean temperatures and
-                    conditions, affecting marine habitats and species.
+                   Climate change is the long-term change in Earth's temperatures and weather patterns, largely caused by human activities that release greenhouse gases. The ocean absorbs much of the extra heat and carbon dioxide, causing problems such as rising sea temperatures, ocean acidification and rising sea levels. These changes can damage habitats and make it harder for marine animals to find food and survive. Climate change can also force species to move to new areas as ocean conditions change. Reducing greenhouse gas emissions and protecting marine ecosystems can help reduce the effects of climate change on the ocean. 
                 </p>
             </div>
 
@@ -207,17 +206,116 @@
 
     <div class="video-box">
 
-        <a href="https://www.youtube.com/" target="_blank">
-            <img src="images/youtube-logo.png" alt="Watch video on YouTube">
+        <a href="https://youtu.be/goF5gPbyvHc?si=36R3j_iPJmU682G1" target="_blank">
+            <img src="images (1).jpg" alt="Watch video on YouTube">
         </a>
 
     </div>
 
 </section>
 
-    <!-- JS -->
+
+    <!-- JS Link For Transition-->
     <script src="script.js"></script>
 
+    <!-- JS FOR WHITE BOX TEXT-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const text = document.querySelector(".endangered-text");
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+                    text.classList.add("show");
+                } else {
+                    text.classList.remove("show");
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.2
+        }
+    );
+
+    observer.observe(text);
+
+});
+</script>
+
+    <!-- JS FOR CARDS-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const cards = document.querySelectorAll(".species-card");
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                } else {
+                    entry.target.classList.remove("show");
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.2
+        }
+    );
+
+    cards.forEach(function (card) {
+        observer.observe(card);
+    });
+
+});
+</script>
 </body>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- NAV LINKS -->
+    <ul class="footer-links">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Endangered-Species.html">Endangered Species</a></li>
+        <li><a href="Recent-News.html">Recent News</a></li>
+        <li><a href="Quiz.html">Quiz</a></li>
+        <li><a href="How-Can-You-Help.html">How Can You Help?</a></li>
+        <li><a href="Contact-Us.html">Contact Us</a></li>
+    </ul>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="footer-socials">
+
+        <a href="https://www.facebook.com/" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="https://www.instagram.com/" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.youtube.com/" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+    </div>
+
+</footer>
 
 </html>
