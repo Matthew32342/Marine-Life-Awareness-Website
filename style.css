@@ -1148,7 +1148,7 @@ body {
     transform: scale(1.2);
 }
 
-/* Species that need our help */
+/* Species that need our help page */
 body {
     margin: 0;
     background-color: #0c0c0c;
@@ -1555,6 +1555,385 @@ body {
     }
 }
 
+/* How can u help page */
+body {
+    margin: 0;
+    background-color: #0c0c0c;
+    color: white;
+}
+
+.hero5 {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+
+.hero-content5 {
+    text-align: center;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+
+.hero-content5 strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #00FFFF;
+    margin-bottom: 0px;
+}
+
+.hero-content5 h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+}
+
+.species-cards5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 25px auto 0;
+    padding: 0 20px;
+}
+
+.species-card5 {
+    background-color: white;
+      box-shadow: 0 0 30px #075d82;
+    overflow: hidden;
+    border-radius: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+/* LEFT CARD */
+.species-card:nth-child(3n + 1) {
+    transform: translateX(-100px);
+}
+
+
+/* MIDDLE CARD */
+.species-card:nth-child(3n + 2) {
+    transform: translateY(30px);
+}
+
+
+/* RIGHT CARD */
+.species-card:nth-child(3n) {
+    transform: translateX(100px);
+}
+
+
+/* WHEN CARDS ARE VISIBLE */
+.species-card.show {
+    opacity: 1;
+    transform: translate(0);
+}
+   
+.species-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.species-info {
+    padding: 12px;
+    color: black;
+}
+
+.species-info h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.species-info p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* How can u help page */
+
+.actions-section5 {
+    width: 100%;
+
+    padding: 12px 0 18px;
+}
+
+
+/* TITLE */
+
+.actions-title5 {
+    text-align: center;
+
+    margin-bottom: 12px;
+}
+
+.actions-title5 p {
+    margin: 0;
+
+    color: #48d6d6;
+
+    font-size: 20px;
+}
+
+.actions-title5 h1 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 30px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   ACTION CARDS
+   ========================================================= */
+
+.species-cards5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 25px auto 0;
+    padding: 0 20px;
+}
+
+/* ACTION CARD */
+
+.action-card {
+    background-color: white;
+    box-shadow: 0 0 30px #075d82;
+    overflow: hidden;
+    border-radius: 0;
+
+    opacity: 1 ;
+    transform: none;
+    transition: none;
+    animation: none;
+}
+
+/* IMAGES */
+
+.action-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* TEXT */
+
+.action-card .species-info {
+    padding: 12px;
+    color: black;
+}
+
+.action-card .species-info h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.action-card .species-info p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   DONATE SECTION
+   ========================================================= */
+
+.donate-section5 {
+    width: 100%;
+
+    padding: 10px 0 34px;
+}
+
+
+/* DONATE TITLE */
+
+.donate-section5 > h1 {
+    text-align: center;
+    margin: 0 0 8px;
+   padding: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+}
 
 
 
+/* =========================================================
+   DONATE CONTENT
+   ========================================================= */
+
+.donate-content5 {
+    width: 94%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 390px;
+
+    gap: 45px;
+
+    align-items: start;
+}
+
+
+
+/* =========================================================
+   DONATION IMAGES
+   ========================================================= */
+
+.donate-images5 {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+    padding-left: 5px;
+}
+
+
+.donate-images5 img {
+    width: 100%;
+
+    max-width: 420px;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+
+/* =========================================================
+   DONATION FORM
+   ========================================================= */
+
+.donation-form5 {
+    background: white;
+    color: #222;
+    padding: 30px 35px 35px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 650px;
+}
+
+
+/* FORM TITLE */
+
+.donation-form5 h2 {
+    margin: 0 0 8px;
+    color:#000814;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+/* FORM SUBTITLE */
+
+.donation-form5 > p {
+    margin: 0 0 25px;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+.donation-form5 form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.donation-form5 label {
+    margin: 8px 0 5px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.donation-form5 input,
+.donation-form5 select,
+.donation-form5 textarea {
+    width: 100%;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    border: 1px solid #d6d6d6;
+    background: white;
+    color: #333;
+    font-size: 13px;
+    outline: none;
+    min-height: 45px;
+}
+
+
+.donation-form5 input:focus,
+.donation-form5 select:focus,
+.donation-form5 textarea:focus {
+    border-color: #103e4e;
+}
+
+
+
+.donation-form5 textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+
+/* =========================================================
+   TWO INPUTS BESIDE EACH OTHER
+   ========================================================= */
+
+.form-row5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.donate-button5 {
+    width: 150px;
+    margin: 25px auto 0;
+    padding: 12px 20px;
+    border: none;
+    background: #101955;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+
+.donate-button5:hover {
+    background: #183b7a;
+    transform: translateY(-2px);
+}
