@@ -1383,7 +1383,6 @@ body {
 /* RECENT NEWS PAGE */
 /* PAGE BACKGROUND */
 .recent-news-page3 {
-    background: black;
     min-height: 100vh;
     padding: 0 0 45px 0;
 }
@@ -1394,6 +1393,14 @@ body {
     text-align: center;
     color: white;
     padding: 38px 20px 25px;
+}
+
+.news-heading3 strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: #00FFFF;
+    margin-bottom: 0px;
 }
 
 .news-heading3 h1 {
@@ -1499,6 +1506,36 @@ body {
     transform: scale(1.05);
 }
 
+/* Fade EFFECT */
+/* NEWS CARD FADE IN */
+.news-card3 {
+    opacity: 1;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.news-card3.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* NEWS CARD SCROLL FADE */
+.news-card3.fade-in {
+    animation: newsFadeIn 0.8s ease forwards;
+}
+
+@keyframes newsFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* =========================================================
    QUIZ INSTRUCTIONS BOX
    ========================================================= */
@@ -1555,7 +1592,7 @@ body {
     }
 }
 
-/* How can u help page */
+/* HOW CAN U HELP PAGE */
 body {
     margin: 0;
     background-color: #0c0c0c;
@@ -1708,20 +1745,41 @@ body {
 
 /* ACTION CARD */
 
+/* ACTION CARD ANIMATION */
+
 .action-card {
     background-color: white;
     box-shadow: 0 0 30px #075d82;
     overflow: hidden;
     border-radius: 0;
 
-    opacity: 1 ;
-    transform: none;
-    transition: none;
-    animation: none;
+    opacity: 0;
+}
+
+/* LEFT CARD */
+.action-card:nth-child(1) {
+    transform: translateX(-80px);
+}
+
+/* MIDDLE CARD */
+.action-card:nth-child(2) {
+    transform: translateY(40px);
+}
+
+/* RIGHT CARD */
+.action-card:nth-child(3) {
+    transform: translateX(80px);
+}
+
+
+/* WHEN CARD BECOMES VISIBLE */
+.action-card.show {
+    opacity: 1;
+    transform: translate(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 /* IMAGES */
-
 .action-card img {
     width: 100%;
     height: 220px;
@@ -1810,16 +1868,23 @@ body {
 }
 
 
+/* DONATION IMAGE SCROLL FADE */
+
 .donate-images5 img {
     width: 100%;
-
     max-width: 420px;
-
     height: 300px;
-
     object-fit: cover;
-
     display: block;
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.donate-images5 img.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -1925,7 +1990,7 @@ body {
     margin: 25px auto 0;
     padding: 12px 20px;
     border: none;
-    background: #101955;
+    background: #075d82;
     color: white;
     font-size: 13px;
     cursor: pointer;
@@ -1934,7 +1999,7 @@ body {
 
 
 .donate-button5:hover {
-    background: #183b7a;
+    background: #00FFFF;
     transform: translateY(-2px);
 }
 
@@ -1972,11 +2037,21 @@ body {
     font-weight: 700;
 }
 
+/* CONTACT TEXT FADE EFFECT */
 .contact-box p {
     margin: 2px 0;
-    color:black;
+    color: black;
     font-size: 20px;
     font-weight: 400;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.contact-box p.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .contact-images {

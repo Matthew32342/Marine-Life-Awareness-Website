@@ -12,6 +12,24 @@
 
     <link rel="stylesheet" href="style.css">
 
+ <!-- BUBBLE BACKGROUND -->
+<div class="wrapper">
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+</div>
     <!-- PRELOAD PAGES -->
     <link rel="prefetch" href="index.html">
     <link rel="prefetch" href="Endangered-Species.html">
@@ -78,7 +96,7 @@
 
         <!-- PAGE TITLE -->
         <section class="news-heading3">
-
+        <strong>What's Happening Today?</strong>
             <h1>Recent News On Marine Life</h1>
 
         </section>
@@ -290,6 +308,38 @@
         </section>
 
     </main>
+            <!-- fade JS effect -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const cards = document.querySelectorAll(".news-card3");
+
+    const observer = new IntersectionObserver(function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.remove("fade-in");
+
+                // Restart the animation
+                void entry.target.offsetWidth;
+
+                entry.target.classList.add("fade-in");
+            }
+
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    cards.forEach(function(card) {
+        observer.observe(card);
+    });
+
+});
+</script>
+
 </body>
 
 <!-- FOOTER -->

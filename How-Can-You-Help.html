@@ -11,7 +11,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-
+ <!-- BUBBLE BACKGROUND -->
+<div class="wrapper">
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+</div>
     <!-- PRELOAD PAGES -->
     <link rel="prefetch" href="index.html">
     <link rel="prefetch" href="Endangered-Species.html">
@@ -338,9 +355,73 @@ Educating yourself about environmental issues is an important step towards takin
 
 
 
-    <!-- JS -->
+    <!-- JS LINK FOR PAGE TRANSITION -->
     <script src="script.js"></script>
 
+
+    <!-- JS DONATE IMAGES -->
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const donateImages = document.querySelectorAll(".donate-images5 img");
+
+    const observer = new IntersectionObserver(function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            } else {
+                entry.target.classList.remove("show");
+            }
+
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    donateImages.forEach(function (image) {
+        observer.observe(image);
+    });
+
+});
+</script>
+
+
+
+        <!-- JS FOR ACTION CARD AIMATION  -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const actionCards = document.querySelectorAll(".action-card");
+
+    const observer = new IntersectionObserver(function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            } else {
+
+                entry.target.classList.remove("show");
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    actionCards.forEach(function (card) {
+        observer.observe(card);
+    });
+
+});
+</script>
 </body>
 
 <!-- FOOTER -->
